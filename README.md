@@ -17,4 +17,6 @@ webob
 
 mod_wsgi
 
+paste
+
 pastedeploy
