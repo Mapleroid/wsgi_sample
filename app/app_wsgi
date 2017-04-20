@@ -1,0 +1,18 @@
+#!/usr/bin/python
+
+import threading
+
+import sys
+sys.path.append("/home/crack/wsgi_sample")
+
+from app import app
+
+if __name__ == "__main__":
+    print "Cannot execute by this way!"
+else:
+    application = None
+    app_lock = threading.Lock()
+
+    with app_lock:
+        if application is None:
+            application = app.initialize_application()
